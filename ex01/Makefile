@@ -6,17 +6,18 @@
 #    By: majkijew <majkijew@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:01:48 by majkijew          #+#    #+#              #
-#    Updated: 2025/12/19 13:29:13 by majkijew         ###   ########.fr        #
+#    Updated: 2025/12/19 16:33:02 by majkijew         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #change header later
 
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+# CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFLAGS := 
 
 NAME := phonebook
-SRC := PhoneBook.cpp setContact.cpp getContact.cpp
+SRC := main.cpp PhoneBook.cpp Contact.cpp 
 
 OBJ_DIR := obj
 OBJ := $(SRC:%.cpp=$(OBJ_DIR)/%.o)

@@ -5,77 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: majkijew <majkijew@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 14:41:42 by majkijew          #+#    #+#             */
-/*   Updated: 2025/12/19 13:30:33 by majkijew         ###   ########.fr       */
+/*   Created: 2025/12/19 14:09:19 by majkijew          #+#    #+#             */
+/*   Updated: 2025/12/19 19:12:34 by majkijew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-Contact::Contact() : _index(0), _name(""), _nickname(""), _phoneNumber(""),
-_darkestSecret() {}
+PhoneBook::PhoneBook() : _contactsCount(0), _contactIndex(0) {}
 
-Contact::Contact(const Contact &other)
-{
-	_index = other._index;	
-	_name = other._name;
-	_nickname = other._nickname;
-	_phoneNumber = other._phoneNumber;
-	_darkestSecret = other._darkestSecret;
+PhoneBook::~PhoneBook() {}
+
+// set
+void PhoneBook::setCount(int count) {
+	_contactsCount = count;
 }
 
-Contact	&Contact::operator=(const Contact &other)
-{
-	if (this != &other)
-	{
-		_index = other._index;	
-		_name = other._name;
-		_nickname = other._nickname;
-		_phoneNumber = other._phoneNumber;
-		_darkestSecret = other._darkestSecret;	
-	}
-	return *this;
+void PhoneBook::setIndex(int index) {
+	_contactIndex = index;
 }
 
-Contact::~Contact() {}
+// get
+int PhoneBook::getCount() const {
+	return (_contactsCount);	
+}
 
-// void exit()
-// {
+int PhoneBook::getIndex() const {
+	return (_contactIndex);	
+}
+
+//phone book functions
+
+
+// void addContact(){
+// 	PhoneBook contact;
+		
+// }
+
+// void formatContact(Contact contact) {
+// 	if 
 	
 // }
 
-// void search()
-// {
+void PhoneBook::displayContact() {
 	
-// }
-
-// void add()
-// {
-// 	Contact.setName("");
-// }
-
-// int main(int ac, char **av)
-int main()
-{
-	Contact yeSlay;
-	Contact yeSlay2;
-	yeSlay.setIndex(1);
-	yeSlay2 = yeSlay;
-	yeSlay.setIndex(6);
-	
-	std::cout << yeSlay.getIndex();
+	Contact contact;
+	std::string name(contact.getName()); //zrobie ze jak ktos podaje imput to bedzie musial osobno podac i imie i nazwisko
+	std::string nickname(contact.getNickname());
+	// formatContact(contact);
+	std::cout << contact.getIndex()<< "         " << "Slawyslaw " << "Slava "  << "duzy joe " << "\n" ;
 }
-// {
-	// if (ac == 1)
-	// 	return (1);
-	// std::string s(av[1]);
-	// if (s == "ADD")
-	// 	add();
-	// else if (s == "SEARCH")
-	// 	search();
-	// else if (s == "EXIT")
-	// 	exit();
-	// else
-	// 	std::cout << "ur imput is being ignored\n";
-	// return (0);
-// }
