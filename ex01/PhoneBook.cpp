@@ -6,7 +6,7 @@
 /*   By: majkijew <majkijew@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:09:19 by majkijew          #+#    #+#             */
-/*   Updated: 2025/12/19 19:12:34 by majkijew         ###   ########.fr       */
+/*   Updated: 2025/12/22 16:27:37 by majkijew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,28 @@ int PhoneBook::getIndex() const {
 		
 // }
 
-// void formatContact(Contact contact) {
-// 	if 
-	
-// }
+void formatString(std::string& s) {
+	int i = 10;
 
-void PhoneBook::displayContact() {
-	
-	Contact contact;
-	std::string name(contact.getName()); //zrobie ze jak ktos podaje imput to bedzie musial osobno podac i imie i nazwisko
+	if (s.length() < 10)
+		s.resize(10, ' ');
+	else if (s.length() > 10)
+	{
+		s.resize(9, ' ');
+		s += '.';
+	}
+}
+
+void PhoneBook::displayContact(const Contact& contact) const {
+	std::string name(contact.getName());
+	std::string lastname(contact.getLastName());
 	std::string nickname(contact.getNickname());
-	// formatContact(contact);
-	std::cout << contact.getIndex()<< "         " << "Slawyslaw " << "Slava "  << "duzy joe " << "\n" ;
+	
+	formatString(name);
+	formatString(lastname);
+	formatString(nickname);
+	std::cout << contact.getIndex() << "         " << " | "
+				<< name << " | "
+				<< lastname << " | "
+				<< nickname << "\n" ;
 }

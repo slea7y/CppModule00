@@ -56,9 +56,10 @@ class PhoneBook {
 	public:
 		PhoneBook();
 		~PhoneBook();
-		// void addContact();
+		void addContact();
 		// void countContacts();
-		void displayContact();
+		void search();
+		void displayContact(const Contact &contact) const;
 	//setter
 	void setCount(int count);
 	void setIndex(int index);
